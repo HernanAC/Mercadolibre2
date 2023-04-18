@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import Carousel from './Carrousel/Carousel';
 
 import firstdiv from '../public/a@2x.png';
 import creditcardsvg from '../public/creditcardsvg.svg';
@@ -68,6 +69,21 @@ import supermercadosvg from '../public/svg2.svg';
 import ofertassvg1 from '../public/ofertassvg1.svg';
 import ofertassvg2 from '../public/ofertassvg2.svg';
 import Product from './Product';
+
+import Carousel2 from './Carrousel/Carousel2';
+
+const products = [
+    { id: 1, name: 'Producto 1', description: 'Descripción del producto 1', price: '$699.999', image: '/product.png' },
+    { id: 2, name: 'Producto 2', description: 'Descripción del producto 2', price: '$5.699.000', image: '/product1.png' },
+    { id: 3, name: 'Producto 3', description: 'Descripción del producto 3', price: '$5.599.000', image: '/product2.png' },
+    { id: 4, name: 'Producto 4', description: 'Descripción del producto 4', price: '$400', image: '/product3.png' },
+    { id: 5, name: 'Producto 5', description: 'Descripción del producto 5', price: '$500', image: '/product4.png' },
+    { id: 6, name: 'Producto 6', description: 'Descripción del producto 6', price: '$500', image: '/product5.png' },
+   // { id: 7, name: 'Producto 7', description: 'Descripción del producto 7', price: '$500', image: '/product6.png' },
+    { id: 8, name: 'Producto 8', description: 'Descripción del producto 8', price: '$500', image: '/product7.png' },
+    { id: 9, name: 'Producto 9', description: 'Descripción del producto 9', price: '$500', image: '/product8.png' },
+
+  ];
 
 const productInfo = {
     focus: [
@@ -160,8 +176,7 @@ const Content = () => {
                 </div>
                 <div className="bg-neutral-200 w-[1px] h-[90px] left-[1078px] top-[380px] absolute "></div>
             </div>
-
-
+            
             <div className="absolute left-[164px] pt-[43px]">
                 <div className="flex justify-end items-center w-40 gap-[16px] pb-[22px] ">
                     <div className="w-20 h-8 not-italic font-light text-2xl text-gray-700">
@@ -171,20 +186,14 @@ const Content = () => {
                         Ver todas
                     </div>
                 </div>
-                <div className="absolute w-[109px] h-[109px] left-[-55px] top-[190px] bg-white rounded-full z-50 flex items-center justify-center shadow-xl">
-                    <Image src={ofertassvg1} alt="" width={30} height={47.45} />
-                </div>
-                <div className="flex-none order-1 flex-grow-0 w-[1200px] h-[415px] ">
-                    <div className="flex absolute pr-[8px] gap-[16px]">
-                        {productInfo.focus.map((product, index) => {
-                            return <Product key={index} image={product.image} price={product.price} />;
-                        })}
-                    </div>
-                </div>
-                <div className="absolute w-[109px] h-[109px] left-[1125px] top-[190px] bg-white rounded-full z-50 flex items-center justify-center shadow-xl">
-                    <Image src={ofertassvg2} alt="" width={30} height={47.45} />
-                </div>
+                
+                
+                
             </div>
+
+            <div>
+      <Carousel2 products={products} />
+    </div>
 
 
             <div className="flex flex-col items-center p-0 absolute bg-white w-[1180px] h-[340px] left-[164px] top-[980.19px] rounded-t-lg ">
