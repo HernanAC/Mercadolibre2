@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image';
-import Carousel from './Carrousel/Carousel';
 
 import firstdiv from '../public/a@2x.png';
 import creditcardsvg from '../public/creditcardsvg.svg';
@@ -70,66 +69,64 @@ import ofertassvg1 from '../public/ofertassvg1.svg';
 import ofertassvg2 from '../public/ofertassvg2.svg';
 import Product from './Product';
 
-import Carousel2 from './Carrousel/Carousel2';
+import Carousel from './Carrousel/Carousel';
 
 const products = [
-    { id: 1, name: 'Producto 1', description: 'Descripción del producto 1', price: '$699.999', image: '/product.png' },
-    { id: 2, name: 'Producto 2', description: 'Descripción del producto 2', price: '$5.699.000', image: '/product1.png' },
-    { id: 3, name: 'Producto 3', description: 'Descripción del producto 3', price: '$5.599.000', image: '/product2.png' },
-    { id: 4, name: 'Producto 4', description: 'Descripción del producto 4', price: '$400', image: '/product3.png' },
-    { id: 5, name: 'Producto 5', description: 'Descripción del producto 5', price: '$500', image: '/product4.png' },
-    { id: 6, name: 'Producto 6', description: 'Descripción del producto 6', price: '$500', image: '/product5.png' },
-   // { id: 7, name: 'Producto 7', description: 'Descripción del producto 7', price: '$500', image: '/product6.png' },
-    { id: 8, name: 'Producto 8', description: 'Descripción del producto 8', price: '$500', image: '/product7.png' },
-    { id: 9, name: 'Producto 9', description: 'Descripción del producto 9', price: '$500', image: '/product8.png' },
-
+    {
+      id: 1,
+      name: "Producto 1",
+      image: "/product.png",
+      price: 100,
+    },
+    {
+      id: 2,
+      name: "Producto 2",
+      image: "/product1.png",
+      price: 200,
+    },
+    {
+      id: 3,
+      name: "Producto 3",
+      image: "/product2.png",
+      price: 300,
+    },
+    {
+        id: 4,
+        name: "Producto 3",
+        image: "/product3.png",
+        price: 300,
+      },
+      {
+        id: 5,
+        name: "Producto 3",
+        image: "/product4.png",
+        price: 300,
+      },
+      {
+        id: 6,
+        name: "Producto 3",
+        image: "/product5.png",
+        price: 300,
+      },
+      {
+        id: 7,
+        name: "Producto 3",
+        image: "/product6.png",
+        price: 300,
+      },
+      {
+        id: 8,
+        name: "Producto 3",
+        image: "/product7.png",
+        price: 300,
+      },
+      {
+        id: 9,
+        name: "Producto 3",
+        image: "/product8.png",
+        price: 300,
+      },
   ];
-
-const productInfo = {
-    focus: [
-        {
-            image: '/product.png',
-            price: '699.999'
-        },
-        {
-            image: '/product1.png',
-            price: '5.699.000'
-        },
-        {
-            image: '/product2.png',
-            price: '5.599.000'
-        },
-        {
-            image: '/product3.png',
-            price: '6.999.000'
-        },
-        {
-            image: '/product4.png',
-            price: '749.000'
-        },
-        {
-            image: '/product5.png',
-            price: '1.119.000'
-        },
-        {
-            image: '/product7.png',
-            price: '199.000'
-        },
-        /*{
-            image: '/product7.png',
-            price: '1.899.000'
-        },*/
-        {
-            image: '/product8.png',
-            price: '159.000'
-        },
-        {
-            image: '/product9.png',
-            price: '6.749.000'
-        }
-    ]
-}
-
 
 const Content = () => {
     return (
@@ -192,7 +189,7 @@ const Content = () => {
             </div>
 
             <div>
-      <Carousel2 products={products} />
+      <Carousel products={products} />
     </div>
 
 
