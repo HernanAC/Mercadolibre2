@@ -10,6 +10,7 @@ interface Product {
   image: string;
   price: number;
   discount: string;
+  envio: string;
 }
 
 interface CarouselProps {
@@ -18,7 +19,7 @@ interface CarouselProps {
 
 const CustomPrevArrow = (props: any) => (
   <button
-    className="ml-0 absolute z-10 flex items-center justify-center w-16 h-16 bg-white border border-gray-400 rounded-full shadow-md left-4 md:left-8 lg:left-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-100"
+    className="ml-0 absolute z-10 flex items-center justify-center w-16 h-16 bg-white border border-gray-400 rounded-full shadow-md left-4 md:left-8 lg:left-2 top-1/2 transform -translate-y-1/2 hover:bg-gray-100"
     onClick={props.onClick}
   >
     <svg
