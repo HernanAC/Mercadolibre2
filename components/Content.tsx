@@ -67,8 +67,6 @@ import supermercado8 from '../public/supermercado8.png';
 import supermercadosvg from '../public/svg2.svg';
 import ofertassvg1 from '../public/ofertassvg1.svg';
 import ofertassvg2 from '../public/ofertassvg2.svg';
-import Product from './Product';
-
 import Carousel from './Carrousel/Carousel';
 
 const products = [
@@ -77,54 +75,70 @@ const products = [
       name: "Producto 1",
       image: "/product.png",
       price: 100,
+      discount: '32%',
     },
     {
       id: 2,
       name: "Producto 2",
       image: "/product1.png",
       price: 200,
+      discount: '32%',
     },
     {
       id: 3,
       name: "Producto 3",
       image: "/product2.png",
       price: 300,
+      discount: '32%',
     },
     {
         id: 4,
         name: "Producto 3",
         image: "/product3.png",
         price: 300,
+        discount: '32%',
       },
       {
         id: 5,
         name: "Producto 3",
         image: "/product4.png",
         price: 300,
+        discount: '32%',
       },
       {
         id: 6,
         name: "Producto 3",
         image: "/product5.png",
         price: 300,
+        discount: '32%',
       },
       {
         id: 7,
         name: "Producto 3",
         image: "/product6.png",
         price: 300,
+        discount: '32%',
       },
       {
         id: 8,
         name: "Producto 3",
         image: "/product7.png",
         price: 300,
+        discount: '32%',
       },
       {
         id: 9,
         name: "Producto 3",
         image: "/product8.png",
         price: 300,
+        discount: '32%',
+      },
+      {
+        id: 10,
+        name: "Producto 3",
+        image: "/product9.png",
+        price: 300,
+        discount: '',
       },
   ];
 

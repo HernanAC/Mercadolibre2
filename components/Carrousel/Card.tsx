@@ -5,6 +5,7 @@ interface Product {
   name: string;
   image: string;
   price: number;
+  discount: string;
 }
 
 interface CardProps {
@@ -20,7 +21,7 @@ const Card: React.FC<CardProps> = ({ product }) => {
           <div className="flex items-center gap-[10px]">
             <div className="w-3 text-2xl leading-6 text-gray-800">$</div>
             <div className="text-2xl leading-6 text-gray-800">{product.price}</div>
-            <div className="font-normal text-sm leading-4 text-enviogratis">32% OFF</div>
+            <div className="font-normal text-sm leading-4 text-enviogratis">{product.discount}</div>
           </div>
           <div className="h-5 font-semibold text-xs flex items-center text-enviogratis gap-[10px]">Envío gratis</div>
         </div>

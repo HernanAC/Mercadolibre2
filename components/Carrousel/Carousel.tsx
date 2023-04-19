@@ -9,11 +9,50 @@ interface Product {
   name: string;
   image: string;
   price: number;
+  discount: string;
 }
 
 interface CarouselProps {
   products: Product[];
 }
+
+const CustomPrevArrow = (props: any) => (
+  <button
+    className="ml-0 absolute z-10 flex items-center justify-center w-16 h-16 bg-white border border-gray-400 rounded-full shadow-md left-4 md:left-8 lg:left-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-100"
+    onClick={props.onClick}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-8 w-10 text-sky-600"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        d="M15 19l-7-7 7-7"
+      />
+    </svg>
+  </button>
+);
+
+const CustomNextArrow = (props: any) => (
+  <button
+    className="mr-0 absolute z-10 flex items-center justify-center w-16 h-16 bg-white border border-gray-400 rounded-full shadow-md right-4 md:right-8 lg:right-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-100"
+    onClick={props.onClick}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-8 w-10 text-sky-600"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        d="M9 5l7 7-7 7"
+      />
+    </svg>
+  </button>
+);
 
 const Carousel: React.FC<CarouselProps> = ({ products }) => {
   const settings: Settings = {
@@ -23,6 +62,9 @@ const Carousel: React.FC<CarouselProps> = ({ products }) => {
     slidesToShow: 5,
     slidesToScroll: 4,
     swipe: false,
+    arrows: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
   };
 
   return (
