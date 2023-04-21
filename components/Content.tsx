@@ -121,7 +121,7 @@ const Content = () => {
 
 
             <div className="">
-                <div className="flex  space-x-1 absolute top-[318px] left-[726px]">
+                <div className="flex  space-x-1 absolute lg:top-[318px] lg:left-[726px] top-[210px] left-[530px]">
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
                     <div className="w-[6px] h-[6px] bg-white rounded-full"></div>
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
@@ -129,13 +129,16 @@ const Content = () => {
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
                 </div>
-                <div style={{ background: `url(${firstdiv.src})`, height: 340, width: 1512, backgroundSize: 'contain' }}> </div>
+                {/* <div style={{ background: `url(${firstdiv.src})`, height: 340, width: 1512, backgroundSize: 'contain' }}> </div> */}
+                <div className="">
+                    <img className='w-[1024px] lg:w-[1512px]' src={firstdiv.src} alt="" style={{left: 10, top: 11}} />
+                </div>
             </div>
 
 
-            <div className='pt-[40px] pl-[164px]'>
-                <div className="bg-white w-[1184px] h-[90px] rounded">
-                    <div className="flex flex-row items-start p-0 absolute h-32 font-semibold pl-[20px]">
+            <div className='pl-[60px] pt-[40px] lg:pl-[164px] '>
+                <div className="bg-white w-[920px] lg:w-[1184px] h-[280px] lg:h-[90px] rounded">
+                    <div className="flex flex-col items-start p-0 absolute h-32 font-semibold pl-[20px] lg:flex-row">
                         <div className="w-[304.66px] h-[130px] ">
                             <Image src={creditcardsvg} alt='' width={48} height={48} className="pt-[20px]" />
                             <div className="text-base leading-5 text-black pl-20 pt-0 -mt-10">Hasta 48 cuotas</div>

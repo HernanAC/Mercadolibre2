@@ -5,7 +5,7 @@ import cart from '../public/cart.svg';
 
 const Header = () => {
     return (
-        <div className="bg-mercadolibre w-[1512px] h-[100px] shadow-lg">
+        <div className="hidden bg-mercadolibre w-[1512px] h-[100px] shadow-lg lg:flex">
             <div>
                 <form className="w-[598px] h-[39px] bg-white top-[8px] left-[351px] absolute ">
                     <span className="text-slate-400  pl-[15px] pt-[7px] absolute">Buscar productos, marcas y más...</span>
