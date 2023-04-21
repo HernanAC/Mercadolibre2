@@ -66,10 +66,20 @@ const Carousel: React.FC<CarouselProps> = ({ products }) => {
     arrows: true,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
+    responsive: [
+      {
+        // Screens greater than >= 320px
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        }
+      }
+    ]
   };
 
   return (
-    <div className="mx-auto my-20 max-w-[1184px] p-4">
+    <div className="ms-[90px] lg:mx-auto my-20 max-w-[920px] lg:max-w-[1184px] p-4">
       <Slider {...settings}>
         {products.map((product) => (
           <div key={product.id} className="mx-2">

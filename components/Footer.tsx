@@ -5,7 +5,7 @@ import img2 from '../public/pumpng@2x.png';
 const Footer = () => {
     return (
 
-        <div className="flex flex-col justify-end items-start absolute h-40 left-0 bg-white pt-[17px] gap-[16px] pr-[166px] top-[4036.5px] border-t-[1px] border-trueGray-200">
+        <div className="flex flex-col justify-end items-start absolute w-[1024px] h-40 left-0 bg-white pt-[17px] gap-[16px] top-[5000px] lg:top-[4036.5px] border-t-[1px] border-trueGray-200">
             <div className="flex-col flex-none order-none flex-grow-0 pt-2 pl-[166px]">
                 <ul className="flex-none flex-grow-0 pl-0" >
                     <span className="mr-2 not-italic font-normal text-xs leading-3 items-center text-gray-800">Trabaja con nosotros </span>
