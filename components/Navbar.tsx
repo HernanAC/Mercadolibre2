@@ -39,7 +39,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex flex-row w-full top-[8px]  justify-end pr-5">
-                    {data.map(product => <Modal product={product} />)}
+                    <Modal />
                 </div>
             </div>
         </div>

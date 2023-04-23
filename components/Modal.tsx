@@ -17,7 +17,7 @@ interface ModalProps {
   product: Product;
 }
 
-const Modal: React.FC<ModalProps> = ({ product }) => {
+const Modal = () => {
   const [showModal, setShowModal] = useState(false);
   const [cartItem] = useRecoilState<any>(cartState)
 
