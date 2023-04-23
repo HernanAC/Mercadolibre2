@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import { useState } from 'react';
 
 import firstdiv from '../public/a@2x.png';
 import creditcardsvg from '../public/creditcardsvg.svg';
@@ -71,28 +72,28 @@ import Carousel from './Carrousel/Carousel';
 
 const products = [
     {
-      id: 1,
-      name: "Producto 1",
-      image: "/product.png",
-      price: 210.900,
-      discount: '32% OFF',
-      envio: 'Envío gratis',
+        id: 1,
+        name: "Producto 1",
+        image: "/product.png",
+        price: 210.900,
+        discount: '32% OFF',
+        envio: 'Envío gratis',
     },
     {
-      id: 2,
-      name: "Producto 2",
-      image: "/product1.png",
-      price: 850.000,
-      discount: '25%OFF',
-      envio: 'Envío gratis',
+        id: 2,
+        name: "Producto 2",
+        image: "/product1.png",
+        price: 850.000,
+        discount: '25%OFF',
+        envio: 'Envío gratis',
     },
     {
-      id: 3,
-      name: "Producto 3",
-      image: "/product2.png",
-      price: 350.000,
-      discount: '20%OFF',
-      envio: '',
+        id: 3,
+        name: "Producto 3",
+        image: "/product2.png",
+        price: 350.000,
+        discount: '20%OFF',
+        envio: '',
     },
     {
         id: 4,
@@ -101,64 +102,64 @@ const products = [
         price: 950.000,
         discount: '20% OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 5,
         name: "Producto 3",
         image: "/product4.png",
         price: 80.000,
         discount: '10%OFF',
         envio: '',
-      },
-      {
+    },
+    {
         id: 6,
         name: "Producto 3",
         image: "/product5.png",
         price: 150.000,
         discount: '8%OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 7,
         name: "Producto 3",
         image: "/product6.png",
         price: 40.000,
         discount: '15%OFF',
         envio: '',
-      },
-      {
+    },
+    {
         id: 8,
         name: "Producto 3",
         image: "/product7.png",
         price: 120.000,
         discount: '10%OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 9,
         name: "Producto 3",
         image: "/product8.png",
         price: 950.000,
         discount: '40%OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 10,
         name: "Producto 3",
         image: "/product9.png",
         price: 300.000,
         discount: '15%OFF',
         envio: 'Envío gratis',
-      },
-  ];
+    },
+];
 
 const Content = () => {
     return (
-        <div className="bg-gray-200 h-[3586px] w-[1512px] top-[100px] absolute">
+        <div className="bg-gray-200 h-[4850px] lg:h-[3586px] w-[1024px] lg:w-[1512px] top-[100px] absolute">
 
 
             <div className="">
-                <div className="flex  space-x-1 absolute top-[318px] left-[726px]">
+                <div className="flex  space-x-1 absolute lg:top-[318px] lg:left-[726px] top-[210px] left-[530px]">
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
                     <div className="w-[6px] h-[6px] bg-white rounded-full"></div>
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
@@ -166,13 +167,16 @@ const Content = () => {
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
                     <div className="flex items-center justify-center w-[6px] h-[6px] bg-white rounded-full"><div className="w-[4px] h-[4px] bg-orange-800 rounded-full"></div></div>
                 </div>
-                <div style={{ background: `url(${firstdiv.src})`, height: 340, width: 1512, backgroundSize: 'contain' }}> </div>
+                {/* <div style={{ background: `url(${firstdiv.src})`, height: 340, width: 1512, backgroundSize: 'contain' }}> </div> */}
+                <div className="">
+                    <img className='w-[1024px] lg:w-[1512px]' src={firstdiv.src} alt="" style={{ left: 10, top: 11 }} />
+                </div>
             </div>
 
 
-            <div className='pt-[40px] pl-[164px]'>
-                <div className="bg-white w-[1184px] h-[90px] rounded">
-                    <div className="flex flex-row items-start p-0 absolute h-32 font-semibold pl-[20px]">
+            <div className='pl-[60px] pt-[40px] lg:pl-[164px] '>
+                <div className="bg-white w-[920px] lg:w-[1184px] h-[280px] lg:h-[90px] rounded">
+                    <div className="flex flex-col items-start p-0 absolute h-32 font-semibold pl-[20px] lg:flex-row">
                         <div className="w-[304.66px] h-[130px] ">
                             <Image src={creditcardsvg} alt='' width={48} height={48} className="pt-[20px]" />
                             <div className="text-base leading-5 text-black pl-20 pt-0 -mt-10">Hasta 48 cuotas</div>
@@ -197,8 +201,8 @@ const Content = () => {
                 </div>
                 <div className="bg-neutral-200 w-[1px] h-[90px] left-[1078px] top-[380px] absolute "></div>
             </div>
-            
-            <div className="absolute left-[164px] pt-[43px]">
+
+            <div className="absolute left-[60px] lg:left-[164px] pt-[43px] ">
                 <div className="flex justify-end items-center w-40 gap-[16px] pb-[22px] ">
                     <div className="w-20 h-8 not-italic font-light text-2xl text-gray-700">
                         Ofertas
@@ -207,22 +211,22 @@ const Content = () => {
                         Ver todas
                     </div>
                 </div>
-                
-                
-                
+
+
+
             </div>
 
             <div>
-      <Carousel products={products} />
-    </div>
+                <Carousel products={products} />
+            </div>
 
 
-            <div className="flex flex-col items-center p-0 absolute bg-white w-[1180px] h-[340px] left-[164px] top-[980.19px] rounded-t-lg ">
-                <div className="flex items-center h-[87px] flex-none w-[1180px] bg-gradient-to-r from-suscribete1 to-suscribete2 rounded-t-lg ">
+            <div className="flex flex-col items-center absolute bg-white w-[920px] lg:w-[1180px] h-[340px] lg:left-[164px] left-[60px] top-[1060px] lg:top-[980.19px] rounded-t-lg ">
+                <div className="flex items-center h-[87px] flex-none w-[920px] lg:w-[1180px] bg-gradient-to-r from-suscribete1 to-suscribete2 rounded-t-lg ">
                     <div className="w-56 font-semibold text-2xl leading-7 flex text-white pl-6 w-max">
                         Suscríbete al nivel 6
                     </div>
-                    <div className="border-l-2 border-white h-[37px] flex-none pl-2 left-[1024px] absolute">
+                    <div className="border-l-2 border-white h-[37px] flex-none pl-2 left-[772px] lg:left-[1024px] absolute">
                         <div className="w-32">
                             <div className="not-italic font-medium text-sm leading-3 flex text-white line-through"> $ 50.690 </div>
                             <div className="not-italic font-semibold text-xl flex text-white bottom-[100px]">
@@ -234,7 +238,7 @@ const Content = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col h-[172px] flex-none w-[1180px] gap-[29px]">
+                <div className="flex flex-col h-[172px] flex-none w-[880px] lg:w-[1180px] gap-[29px]">
                     <div className="h-6 text-base pl-6 pt-5 leading-4 font-medium">
                         Consigue los mejores beneficios en Mercado Libre
                     </div>
@@ -253,7 +257,7 @@ const Content = () => {
                         </div>
                     </div>
                 </div>
-                <div className="box-border flex justify-end items-end h-20 w-[1180px] border-t border-gray-100 pb-[16px] pr-[30px]">
+                <div className="box-border flex justify-end items-end h-20 w-[900px] lg:w-[1180px] border-t border-gray-100 pb-[16px] pr-[30px]">
                     <div className="flex flex-col items-center w-32 h-12 bg-blue-500 rounded-md ">
                         <div className="text-sm flex text-white align-middle pt-[12px]">
                             Suscríbete
@@ -263,7 +267,7 @@ const Content = () => {
             </div>
 
 
-            <div className="top-[1360.19px] left-[164px] absolute pt-[1px]">
+            <div className="top-[1430px] lg:top-[1360.19px] left-[60px] lg:left-[164px] absolute pt-[1px]">
                 <div className="flex justify-end items-center gap-[25px] w-[535.73px]">
                     <div className="absolute font-light text-2xl leading-8 text-gray-700 left-[8px] top-[37px]">
                         Beneficio de Mercado Puntos
@@ -272,12 +276,12 @@ const Content = () => {
                         Ver todos los beneficios
                     </div>
                 </div>
-                <div className="w-[1200px] h-[266px]">
-                    <div className="flex items-center absolute top-0 gap-[16px] h-[450px] rounded">
+                <div className="w-[920px] lg:w-[1200px] h-[266px]">
+                    <div className="lg:flex items-center absolute top-[90px] lg:top-0 gap-[20px] lg:gap-[16px] h-[450px] rounded grid grid-cols-2 gap-x-[60px]">
                         <div style={{ background: `url(${beneficio1.src})`, height: 250, width: 384, backgroundSize: 'contain', borderRadius: 6 }}  >
                             <div className="w-[384px] h-[109px] mt-[142px] bg-gradient-to-b from-black/5 to-black rounded">
                             </div>
-                            <div className="absolute h-24 align-top w-[384px] top-[240px]">
+                            <div className="absolute h-24 align-top w-[384px] top-[155px] lg:top-[240px]">
                                 <Image src={disney} alt="" width={80} height={80} className="absolute left-[16px]" />
                                 <div className="absolute font-semibold text-xl pl-24 text-white left-[16px] top-[18.5px] w-max">Sin cargo con el nivel 6</div>
                                 <div className="absolute text-base leading-5 pl-24 text-white left-[16px] top-[47.92px] tracking-wide">Disney+ y Star+</div>
@@ -286,7 +290,7 @@ const Content = () => {
                         <div style={{ background: `url(${beneficio2.src})`, height: 250, width: 384, backgroundSize: 'contain', borderRadius: 6 }}  >
                             <div className="w-[384px] h-[109px] mt-[142px] bg-gradient-to-b from-purple-900 opacity-10 to-trueGray-900 rounded opacity-25">
                             </div>
-                            <div className="absolute h-24 align-top w-[384px] top-[240px]">
+                            <div className="absolute h-24 align-top w-[384px] top-[155px] lg:top-[240px]">
                                 <Image src={hbo} alt="" width={80} height={80} className="absolute left-[16px]" />
                                 <div className="absolute leading-4 text-white pl-24 left-[16px] top-[4px] text-xs">7 DÍAS GRATIS</div>
                                 <div className="absolute font-semibold text-xl pl-24 text-white left-[16px] top-[18.5px] w-[300px]">Hasta 50% OFF</div>
@@ -296,7 +300,7 @@ const Content = () => {
                         <div style={{ background: `url(${beneficio3.src})`, height: 250, width: 384, backgroundSize: 'contain', borderRadius: 6 }}  >
                             <div className="w-[384px] h-[109px] mt-[142px] bg-gradient-to-b from-blue-500/10  to-blue-600 rounded ">
                             </div>
-                            <div className="absolute h-24 align-top w-[384px] top-[240px]">
+                            <div className="absolute h-24 align-top w-[384px] top-[420px] lg:top-[240px]">
                                 <Image src={paramount} alt="" width={80} height={80} className="absolute left-[16px] " />
                                 <div className="absolute leading-4 text-white pl-24 left-[16px] top-[4px] text-xs">7 DÍAS GRATIS</div>
                                 <div className="absolute font-semibold text-xl pl-24 text-white left-[16px] top-[18.5px] w-[300px]">Hasta 50% OFF</div>
@@ -308,11 +312,11 @@ const Content = () => {
             </div>
 
 
-            <div className="absolute w-[1200px] h-[398.19px] top-[1759.5px] left-[164px]">
+            <div className="absolute w-[900px] lg:w-[1200px] h-[398.19px] top-[2052px] lg:top-[1759.5px] left-[60px] lg:left-[164px]">
                 <div className="absolute font-light text-2xl leading-8 text-gray-700 left-[8px] top-[37px]">
                     Descubre
                 </div>
-                <div className="flex absolute left-0 gap-[15px] top-[93.19px]">
+                <div className="lg:flex absolute left-0 gap-[15px] top-[93.19px] grid grid-cols-1">
                     <div className="flex items-center bg-white rounded gap-[32px] w-[584px]">
                         <div className="h-48 flex-none order-none flex-grow w-[262.16px]">
                             <div className="font-semibold text-xs leading-3 text-gray-700 pl-8 pt-12 tracking-[3.5px]">RENUEVA TUS ESPACIOS</div>
@@ -320,7 +324,7 @@ const Content = () => {
                             <div className="h-8 font-semibold text-2xl uppercase text-gray-700 pl-8">HASTA 50% OFF</div>
                         </div>
                         <Image src={descubre1} alt="" className="descubreimg2 rounded" width={289.8} height={250} />
-                        <div className="absolute w-40 bg-blue-500 rounded-sm bottom-[40px] left-[36px] h-[36px]">
+                        <div className="absolute w-40 bg-blue-500 rounded-sm bottom-[290px] lg:bottom-[40px] left-[36px] h-[36px]">
                             <div className="h-5 text-sm flex items-center text-white w-6/12 m-auto pt-[13px] pl-[12px]">  Ver más</div>
                         </div>
                     </div>
@@ -331,7 +335,7 @@ const Content = () => {
                             <div className="h-8 font-semibold text-2xl uppercase text-gray-700 pl-8">$17.899 cada mes</div>
                         </div>
                         <Image src={descubre2} alt="" className="descubreimg2 rounded" width={289.8} height={250} />
-                        <div className="absolute w-40 bg-blue-500 rounded-sm bottom-[40px] left-[638px] h-[36px]" >
+                        <div className="absolute w-40 bg-blue-500 rounded-sm bottom-[30px] lg:bottom-[40px] left-[36px] lg:left-[638px] h-[36px]" >
                             <div className="h-5 text-sm flex items-center text-white w-6/12 m-auto pt-[13px] pl-[5px]">
                                 Suscribirme
                             </div>
@@ -341,8 +345,8 @@ const Content = () => {
             </div>
 
 
-            <div className="flex flex-col justify-center items-center absolute w-[1512px] h-[505.19px] top-[2117.5px]">
-                <div className="pt-8 w-[1200px] h-[505.19px]">
+            <div className="flex flex-col justify-center w-[900px] absolute lg:w-[1512px] h-[505.19px] top-[2700px] lg:top-[2117.5px] left-[60px]">
+                <div className="pt-8 w-[900px] lg:w-[1200px] h-[505.19px]">
                     <div className="flex justify-end items-center h-8 gap-[25px] w-[454.64px]">
                         <div className="font-light text-2xl leading-8 text-gray-700 pl-1 w-[370px]">
                             Las mejores tiendas te esperan
@@ -352,8 +356,8 @@ const Content = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex-none order-1 flex-grow-0 w-[1200px]">
-                    <div className="flex absolute gap-[16px] top-[100px]">
+                <div className="flex-none order-1 flex-grow-0 w-[900px] lg:w-[1200px]">
+                    <div className="lg:flex absolute gap-4 top-[100px] grid grid-cols-2">
                         <div className="bg-white rounded w-[284px]">
                             <div className="pl-[107px] absolute font-semibold text-sm text-gray-500 top-[298px]">
                                 Ver tienda
@@ -436,7 +440,7 @@ const Content = () => {
 
 
             <div className="">
-                <div className="absolute flex items-end absolute left-[164px] top-[2656px]">
+                <div className="absolute flex items-end absolute left-[60px] lg:left-[164px] top-[3200px] lg:top-[2656px]">
                     <div className="w-36 text-2xl leading-6 items-center text-gray-700 font-light">
                         Colecciones:
                     </div>
@@ -447,7 +451,7 @@ const Content = () => {
                         <Image src={supermercadosvg} alt="" className="pt-[20px]" />
                     </div>
                 </div>
-                <div className="absolute w-[1200px] h-[382px] left-[164px] top-[2709.69px] rounded-t">
+                <div className="absolute w-[1200px] h-[382px] left-[164px] top-[3250px] lg:top-[2709.69px] left-[60px] rounded-t">
                     <div className="bg-white rounded w-[383px] h-[384px] rounded-t">
                         <Image src={supermercado} alt="" width={383} height={281} className='rounded-t' />
                         <div className="h-24 bg-white w-[383px] rounded">
@@ -465,10 +469,10 @@ const Content = () => {
                         <div className="absolute h-45 bg-white rounded left-[208px] right-[408px] top-[8px]">
                             <Image src={supermercado2} alt="" width={184} height={184} />
                         </div>
-                        <div className="absolute h-45 bg-white rounded left-[408px] right-[208px] top-[8px]">
+                        <div className="hidden lg:flex  absolute h-45 bg-white rounded left-[408px] right-[208px] top-[8px]">
                             <Image src={supermercado3} alt="" width={184} height={184} />
                         </div>
-                        <div className="absolute h-45 bg-white rounded left-[608px] right-[8px] top-[8px]">
+                        <div className="hidden lg:flex  absolute h-45 bg-white rounded left-0 lg:left-[608px] right-0 lg:right-[8px] top-[8px]">
                             <Image src={supermercado4} alt="" width={184} height={184} />
                         </div>
                         <div className="absolute h-45 bg-white rounded left-[8px] right-[608px] top-[208px]">
@@ -477,10 +481,10 @@ const Content = () => {
                         <div className="absolute h-45 bg-white rounded left-[208px] right-[408px] top-[208px]">
                             <Image src={supermercado6} alt="" width={184} height={184} />
                         </div>
-                        <div className="absolute h-45 bg-white rounded left-[408px] right-[208px] top-[208px]">
+                        <div className=" hidden lg:flex absolute h-45 bg-white rounded left-[408px] right-[208px] top-[208px]">
                             <Image src={supermercado7} alt="" width={184} height={184} />
                         </div>
-                        <div className="absolute h-45 bg-white rounded left-[608px] right-[8px] top-[208px]">
+                        <div className="hidden lg:flex absolute h-45 bg-white rounded left-[608px] right-[8px] top-[208px]">
                             <Image src={supermercado8.src} alt="" height={184} width={184} />
                         </div>
                     </div>
@@ -488,11 +492,11 @@ const Content = () => {
             </div>
 
 
-            <div className="absolute w-[1200px] h-[473px] top-[3131.69px] left-[164px]">
+            <div className="absolute w-[900px] lg:w-[1200px] h-[473px] top-[3650px] lg:top-[3131.69px]  left-[60px] lg:left-[164px]">
                 <div className="absolute font-light text-2xl text-gray-700 left-[13px] top-[8px] pt-[25px]">
                     Categorías populares
                 </div>
-                <div className="flex absolute rounded left-[10px] top-[93.19px]">
+                <div className="lg:flex absolute rounded left-[10px] top-[93.19px] grid grid-cols-5">
                     <div className="">
                         <div className="box-border flex flex-col justify-end items-center w-[170px] h-[170px] pr-[13px] pb-[44px] pl-[13px] gap-[11px] border bg-white border-solid border-gray-200 pt-[44px] border-r-1 border-b-1">
                             <Image src={populares1} alt="" width={48} height={48} />
@@ -567,8 +571,8 @@ const Content = () => {
             </div>
 
 
-            <div className="absolute left-[-2px] top-[3582.5px]">
-                <div className="h-20 flex-none order-none flex-grow-0 w-[1200px]">
+            <div className="absolute left-[-80px] lg:left-[-2px] top-[4350px] lg:top-[3582.5px]">
+                <div className="h-20 flex-none order-none flex-grow-0 lg:w-[1200px]">
                     <div className="absolute h-[260px] left-[154px] right-[800px] top-[40px]">
                         <img src={creditcard.src} alt="" style={{ paddingLeft: 168, paddingTop: 30 }} />
                         <div className="absolute font-medium text-lg leading-7 flex items-center text-center w-[260.89px] left-[69.66px] top-[105px]">Paga con tarjeta o en efectivo</div>
@@ -583,7 +587,7 @@ const Content = () => {
                         <div className="absolute w-48 text-xs text-blue-500 left-[102.55px] top-[220px]" style={{ top: 200 }}>Conoce más sobre este beneficio</div>
                         <div className="absolute w-px h-16 bg-gray-300 left-[399px] top-[88.5px]"> </div>
                     </div>
-                    <div className="absolute h-[242px] left-[950px]  top-[40px]">
+                    <div className="absolute h-[242px] left-[140px] lg:left-[950px] top-[240px] lg:top-[40px]">
                         <img src={protectedsvg.src} alt="" style={{ paddingLeft: 169, paddingTop: 30 }} />
                         <div className="absolute font-medium text-lg leading-7 flex items-center text-center w-[260.89px] left-[69.66px] top-[105px]" style={{ paddingLeft: 13 }}>Seguridad, de principio a fin</div>
                         <div className="absolute text-sm leading-4 text-center text-gray-500 w-[303.4px] left-[48.39px] top-[136px]">¿No te gusta? ¡Devuélvelo! En Mercado<br></br>Libre, no hay nada que no puedas hacer, porque estás siempre protegido.</div>

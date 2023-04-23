@@ -2,10 +2,11 @@ import React from 'react'
 import logo from '../public/logo.png'
 import categorias from '../public/categorias.svg';
 import cart from '../public/cart.svg';
+import Modal from '@/components/Modal'
 
 const Header = () => {
     return (
-        <div className="bg-mercadolibre w-[1512px] h-[100px] shadow-lg">
+        <div className="hidden bg-mercadolibre w-[1512px] h-[100px] shadow-lg lg:flex">
             <div>
                 <form className="w-[598px] h-[39px] bg-white top-[8px] left-[351px] absolute ">
                     <span className="text-slate-400  pl-[15px] pt-[7px] absolute">Buscar productos, marcas y más...</span>
@@ -32,7 +33,9 @@ const Header = () => {
                     <span>Crea tu cuenta</span>
                     <span>Ingresa</span>
                     <span>Mis compras</span>
-                    <img className='pb-[10px]' src={cart.src} alt="" style={{ height: 35, width: 30, }} />
+                    <div className='flex flex-row w-[30px]'>
+                        <Modal />
+                    </div>
                 </div>
             </div>
         </div>
