@@ -3,6 +3,21 @@ import logo from '../public/logo.png'
 import categorias from '../public/categorias.svg';
 import cart from '../public/cart.svg';
 import menu from '../public/menu.png'
+import Modal from '@/components/Modal'
+import data from "../data.json"
+
+interface Product {
+    id: number;
+    name: string;
+    image: string;
+    price: number;
+    discount: string;
+    envio: string;
+}
+
+interface NavbarProps {
+    product: Product;
+}
 
 const Navbar = () => {
     return (
@@ -13,7 +28,7 @@ const Navbar = () => {
                     <div className="bg-neutral-200 w-[1px] h-[26px] absolute left-[455px] top-[7px]"></div>
                 </form>
                 <div className="absolute w-32 h-8 left-[80px] top-[20px] ">
-                    <img className='max-w-none' src={logo.src} alt="" style={{ height: 54, left: 10, top: 11}} />
+                    <img className='max-w-none' src={logo.src} alt="" style={{ height: 54, left: 10, top: 11 }} />
                 </div>
             </div>
 
@@ -22,9 +37,9 @@ const Navbar = () => {
                     <button><img className='' src={menu.src} alt="" style={{ height: 55, width: 50 }} />
                     </button>
                 </div>
+
                 <div className="flex flex-row w-full top-[8px]  justify-end pr-5">
-                    <button><img className='' src={cart.src} alt="" style={{ height: 55, width: 50, }} />
-                    </button>
+                    {data.map(product => <Modal product={product} />)}
                 </div>
             </div>
         </div>

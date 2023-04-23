@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import { useState } from 'react';
 
 import firstdiv from '../public/a@2x.png';
 import creditcardsvg from '../public/creditcardsvg.svg';
@@ -71,28 +72,28 @@ import Carousel from './Carrousel/Carousel';
 
 const products = [
     {
-      id: 1,
-      name: "Producto 1",
-      image: "/product.png",
-      price: 210.900,
-      discount: '32% OFF',
-      envio: 'Envío gratis',
+        id: 1,
+        name: "Producto 1",
+        image: "/product.png",
+        price: 210.900,
+        discount: '32% OFF',
+        envio: 'Envío gratis',
     },
     {
-      id: 2,
-      name: "Producto 2",
-      image: "/product1.png",
-      price: 850.000,
-      discount: '25%OFF',
-      envio: 'Envío gratis',
+        id: 2,
+        name: "Producto 2",
+        image: "/product1.png",
+        price: 850.000,
+        discount: '25%OFF',
+        envio: 'Envío gratis',
     },
     {
-      id: 3,
-      name: "Producto 3",
-      image: "/product2.png",
-      price: 350.000,
-      discount: '20%OFF',
-      envio: '',
+        id: 3,
+        name: "Producto 3",
+        image: "/product2.png",
+        price: 350.000,
+        discount: '20%OFF',
+        envio: '',
     },
     {
         id: 4,
@@ -101,56 +102,56 @@ const products = [
         price: 950.000,
         discount: '20% OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 5,
         name: "Producto 3",
         image: "/product4.png",
         price: 80.000,
         discount: '10%OFF',
         envio: '',
-      },
-      {
+    },
+    {
         id: 6,
         name: "Producto 3",
         image: "/product5.png",
         price: 150.000,
         discount: '8%OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 7,
         name: "Producto 3",
         image: "/product6.png",
         price: 40.000,
         discount: '15%OFF',
         envio: '',
-      },
-      {
+    },
+    {
         id: 8,
         name: "Producto 3",
         image: "/product7.png",
         price: 120.000,
         discount: '10%OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 9,
         name: "Producto 3",
         image: "/product8.png",
         price: 950.000,
         discount: '40%OFF',
         envio: 'Envío gratis',
-      },
-      {
+    },
+    {
         id: 10,
         name: "Producto 3",
         image: "/product9.png",
         price: 300.000,
         discount: '15%OFF',
         envio: 'Envío gratis',
-      },
-  ];
+    },
+];
 
 const Content = () => {
     return (
@@ -168,7 +169,7 @@ const Content = () => {
                 </div>
                 {/* <div style={{ background: `url(${firstdiv.src})`, height: 340, width: 1512, backgroundSize: 'contain' }}> </div> */}
                 <div className="">
-                    <img className='w-[1024px] lg:w-[1512px]' src={firstdiv.src} alt="" style={{left: 10, top: 11}} />
+                    <img className='w-[1024px] lg:w-[1512px]' src={firstdiv.src} alt="" style={{ left: 10, top: 11 }} />
                 </div>
             </div>
 
@@ -200,7 +201,7 @@ const Content = () => {
                 </div>
                 <div className="bg-neutral-200 w-[1px] h-[90px] left-[1078px] top-[380px] absolute "></div>
             </div>
-            
+
             <div className="absolute left-[60px] lg:left-[164px] pt-[43px] ">
                 <div className="flex justify-end items-center w-40 gap-[16px] pb-[22px] ">
                     <div className="w-20 h-8 not-italic font-light text-2xl text-gray-700">
@@ -210,14 +211,14 @@ const Content = () => {
                         Ver todas
                     </div>
                 </div>
-                
-                
-                
+
+
+
             </div>
 
             <div>
-      <Carousel products={products} />
-    </div>
+                <Carousel products={products} />
+            </div>
 
 
             <div className="flex flex-col items-center absolute bg-white w-[920px] lg:w-[1180px] h-[340px] lg:left-[164px] left-[60px] top-[1060px] lg:top-[980.19px] rounded-t-lg ">

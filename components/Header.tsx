@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../public/logo.png'
 import categorias from '../public/categorias.svg';
 import cart from '../public/cart.svg';
+import Modal from '@/components/Modal'
 
 const Header = () => {
     return (
@@ -32,7 +33,9 @@ const Header = () => {
                     <span>Crea tu cuenta</span>
                     <span>Ingresa</span>
                     <span>Mis compras</span>
-                    <img className='pb-[10px]' src={cart.src} alt="" style={{ height: 35, width: 30, }} />
+                    <div className='flex flex-row w-[30px]'>
+                        <Modal />
+                    </div>
                 </div>
             </div>
         </div>
