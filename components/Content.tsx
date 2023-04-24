@@ -73,7 +73,7 @@ import Carousel from './Carrousel/Carousel';
 const products = [
     {
         id: 1,
-        name: "Producto 1",
+        name: "Apple HomePod mini",
         image: "/product.png",
         price: 210.900,
         discount: '32% OFF',
@@ -81,7 +81,7 @@ const products = [
     },
     {
         id: 2,
-        name: "Producto 2",
+        name: "Apple Iphone 13",
         image: "/product1.png",
         price: 850.000,
         discount: '25%OFF',
@@ -89,7 +89,7 @@ const products = [
     },
     {
         id: 3,
-        name: "Producto 3",
+        name: "iPad Pro 32 Gb",
         image: "/product2.png",
         price: 350.000,
         discount: '20%OFF',
@@ -97,7 +97,7 @@ const products = [
     },
     {
         id: 4,
-        name: "Producto 3",
+        name: "Apple Macbook Air",
         image: "/product3.png",
         price: 950.000,
         discount: '20% OFF',
@@ -105,7 +105,7 @@ const products = [
     },
     {
         id: 5,
-        name: "Producto 3",
+        name: "Apple Pencil",
         image: "/product4.png",
         price: 80.000,
         discount: '10%OFF',
@@ -113,7 +113,7 @@ const products = [
     },
     {
         id: 6,
-        name: "Producto 3",
+        name: "Apple AirPods",
         image: "/product5.png",
         price: 150.000,
         discount: '8%OFF',
@@ -121,7 +121,7 @@ const products = [
     },
     {
         id: 7,
-        name: "Producto 3",
+        name: "PD Charger 20w",
         image: "/product6.png",
         price: 40.000,
         discount: '15%OFF',
@@ -129,7 +129,7 @@ const products = [
     },
     {
         id: 8,
-        name: "Producto 3",
+        name: "Apple Watch SE",
         image: "/product7.png",
         price: 120.000,
         discount: '10%OFF',
@@ -137,7 +137,7 @@ const products = [
     },
     {
         id: 9,
-        name: "Producto 3",
+        name: "iMac",
         image: "/product8.png",
         price: 950.000,
         discount: '40%OFF',
@@ -145,7 +145,7 @@ const products = [
     },
     {
         id: 10,
-        name: "Producto 3",
+        name: "Apple Air Tag",
         image: "/product9.png",
         price: 300.000,
         discount: '15%OFF',
