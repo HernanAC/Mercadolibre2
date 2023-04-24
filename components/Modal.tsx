@@ -19,13 +19,17 @@ interface ModalProps {
 
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
-  const [cartItem] = useRecoilState<any>(cartState)
+  const [cartItem, setCartItem] = useRecoilState<any>(cartState);
 
-  const totalPrice = () => {
-    let total = 0
-    cartItem.forEach((item: any) => total += (item.price))
-    return total
+  const calculateTotalPrice = () => {
+    return cartItem.reduce((total: number, item: any) => total + item.price, 0).toFixed(3);
   }
+
+  const handleDelete = (id: number) => {
+    const updatedCart = cartItem.filter((cartItem: any) => cartItem.id !== id);
+    setCartItem(updatedCart);
+  }
+
 
   return (
     <>
@@ -44,62 +48,74 @@ const Modal = () => {
           <span className='absolute top-[22px] text-[13px] bg-red-600 h-[18px] w-[18px] 
             rounded-full grid place-items-center text-white'>{cartItem.length}</span>
         </div>
-        {/* <img className='flex lg:hidden' src={cart.src} alt="" style={{ height: 55, width: 50, }} />
-        <img className='hidden lg:flex pb-[10px]' src={cart.src} alt="" style={{ height: 35, width: 30, }} /> */}
       </button>
       {showModal ? (
         <>
           <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
-                  <h3 className="text-3xl font=semibold">Shopping Cart</h3>
-                  <button
-                    className=" border-0 text-black float-right"
-                    onClick={() => setShowModal(false)}
-                  >
-                    <span className="text-black opacity-7 h-6 w-6 text-xl block bg-gray-400 py-0 rounded-full">
-                      x
-                    </span>
-                  </button>
+            <div className="bg-white rounded-lg overflow-hidden shadow-xl w-[90%] lg:w-auto">
+                <div className="px-6 py-4 bg-gray-100">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-3xl font-semibold text-gray-800 ml-4 mr-8">Carrito de compras</h3>
+                    <button
+                      className="text-gray-800 hover:text-gray-700 focus:outline-none focus:shadow-outline rounded-full bg-gray-300 px-2 py-1"
+                      onClick={() => setShowModal(false)}
+                    >
+                      <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
                 <div className="relative p-6 flex-auto">
-                  <form className="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 w-full">
-                    <div className='text-left text-3xl font-bold'>Productos</div>
-                    <div className='container mx-auto'>
+                  <div className="px-6 py-4 bg-white">
+                    <div className="text-lg font-medium text-gray-700 mb-4">Productos</div>
+                    <hr className="my-2 border-gray-300" />
+                    <div className="container mx-auto">
                       {cartItem.length <= 0
-                        ? <h1 className='text-center text-4xl mt-32'>Your Cart Is Empty</h1>
+                        ? <h1 className='text-center text-2xl mt-8'>Tu carrito está vacío</h1>
                         : <ul>
                           {cartItem.map((item: any) => (
-                            <li className='flex flex-rows gap-10'>
-                              <span className='text-2xl leading-6 text-gray-800'>{item.name}</span>
-                              <span className='text-2xl leading-6 text-gray-800'>${item.price.toFixed(3)}</span>
+                            <li key={item.id} className='flex flex-rows items-center my-4 gap-4'>
+                              <img src={item.image} alt={item.name} className='w-16 h-16 object-contain rounded-lg' />
+                              <div className='flex flex-col flex-grow'>
+                                <span className='text-lg font-medium text-gray-800'>{item.name}</span>
+                                <span className='text-lg font-medium text-gray-800'>${item.price.toFixed(3)}</span>
+                              </div>
+                              <button
+                                className="text-red-500 hover:text-red-600 focus:outline-none ml-4"
+                                onClick={() => {
+                                  const updatedCart = cartItem.filter((cartItem: any) => cartItem.id !== item.id);
+                                  setCartItem(updatedCart);
+                                }}>Eliminar</button>
                             </li>
                           ))}
+
                         </ul>}
-                      {cartItem.length > 0 && (<div className='max-w-[800px] mx-auto mt-4'>
-                        <h2 className='text-right text-3xl font-bold'>Total: ${totalPrice().toFixed(3)}</h2>
-                      </div>)}
-
-
-
+                      <hr className='my-2 border-gray-300' />
+                      {cartItem.length > 0 && (
+                        <div className='max-w-[800px] mx-auto mt-4'>
+                          <h2 className='text-right text-3xl font-bold'>Total: ${calculateTotalPrice()}</h2>
+                        </div>
+                      )}
                     </div>
-                  </form>
+                  </div>
                 </div>
-                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                <div className="border-t border-solid border-gray-300 rounded-b flex flex-row justify-end p-6">
                   <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                    className="bg-gray-300 hover:bg-gray-400 active:bg-gray-500 text-black font-bold uppercase px-6 py-2 text-sm rounded-l shadow-md outline-none focus:outline-none mr-2"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
-                    Close
+                    Cerrar
                   </button>
                   <button
-                    className="text-white bg-yellow-500 active:bg-yellow-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                    className="bg-gray-700 hover:bg-gray-800 active:bg-gray-900 text-white font-bold uppercase px-6 py-2 text-sm rounded-r shadow-md outline-none focus:outline-none ml-2"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >
-                    Submit
+                    Enviar
                   </button>
                 </div>
               </div>
